@@ -382,9 +382,9 @@ end
 local master_postinit = function(inst)
 	inst.soundsname = "wendy"
 	
-	inst.components.health:SetMaxHealth(KENTUNING.KENDOV_HEALTH)
-	inst.components.hunger:SetMax(KENTUNING.KENDOV_HUNGER)
-	inst.components.sanity:SetMax(KENTUNING.KENDOV_SANITY)
+	inst.components.health:SetMaxHealth(TUNING.KENDOV_HEALTH)
+	inst.components.hunger:SetMax(TUNING.KENDOV_HUNGER)
+	inst.components.sanity:SetMax(TUNING.KENDOV_SANITY)
 	
 	inst.components.health.fire_damage_scale = KENTUNING.KENDOV_FIRE_DAMAGE_SCALE
 	
@@ -409,7 +409,9 @@ local master_postinit = function(inst)
 	inst:ListenForEvent("yawn",grogoff)
 	
 	inst.OnLoad = onload
-    inst.OnNewSpawn = onload
+	inst.OnNewSpawn = onload
+	
+	inst.components.foodaffinity:AddPrefabAffinity("icecream", TUNING.AFFINITY_15_CALORIES_HUGE)
 end
 
 return MakePlayerCharacter("kendov", prefabs, assets, common_postinit, master_postinit, start_inv)

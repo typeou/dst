@@ -221,10 +221,23 @@ AddComponentPostInit("edible", function(Edible, inst)
 	end
 end)
 
+TUNING.KENDOV_HEALTH = 100
+TUNING.KENDOV_HUNGER = 150
+TUNING.KENDOV_SANITY = 100
+
 STRINGS.CHARACTER_TITLES.kendov = "The Night Owl"
 STRINGS.CHARACTER_NAMES.kendov = "Wendov"
 STRINGS.CHARACTER_DESCRIPTIONS.kendov = "*Favours being in the dark\n*Can't heal by traditional methods\n*Well researched hematologist"
 STRINGS.CHARACTER_QUOTES.kendov = "\"Someone turn off the sun...\""
+
+STRINGS.CHARACTER_ABOUTME.kendov = "Wendov is a hematologist who became a bit too interested in his work... is it malpractice to taste-test the samples?"
+STRINGS.CHARACTER_BIOS.kendov = 
+{
+    { title = "Birthday", desc = "August 9" },
+    { title = "Favorite Food", desc = "Ice Cream" },
+    { title = "His Past...", desc = "Is yet to be revealed." },
+}
+STRINGS.CHARACTER_SURVIVABILITY.kendov = "Grim"
 
 STRINGS.CHARACTERS.KENDOV = require "speech_kendov"
 
