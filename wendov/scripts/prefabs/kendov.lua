@@ -290,7 +290,7 @@ local function onattack(inst, data)
 	local victim = data.target
 	if not inst.components.health:IsDead() and IsValidVictim(victim) then
 		if (inst.components.health.currenthealth/(inst.components.health.maxhealth*(1-inst.components.health.penalty))) > 0.99 then
-			inst.components.health:DeltaPenalty(-KENTUNING.KENDOV_LIFESTEAL_BOOSTER_MULT*(inst.components.combat:CalcDamage(victim,inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HANDS),inst.components.combat.damagemultiplier)*(KENTUNING.KENDOV_LIFESTEAL_PERCENT*0.01)*phasehealmult*sanityhealmult)*(KENTUNING.KENDOV_HEALTH/100))
+			inst.components.health:DeltaPenalty(-KENTUNING.KENDOV_LIFESTEAL_BOOSTER_MULT*(inst.components.combat:CalcDamage(victim,inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HANDS),inst.components.combat.damagemultiplier)*(KENTUNING.KENDOV_LIFESTEAL_PERCENT*0.01)*phasehealmult*sanityhealmult)*(TUNING.KENDOV_HEALTH/100))
 		end
 		inst.components.health:DoDelta(inst.components.combat:CalcDamage(victim,inst.components.inventory:GetEquippedItem(EQUIPSLOTS.HANDS),inst.components.combat.damagemultiplier)*KENTUNING.KENDOV_LIFESTEAL_PERCENT*phasehealmult*sanityhealmult)
 	end
@@ -311,10 +311,10 @@ end
 local function buffcheck(inst, data)
 	if data.food.components.edible.foodtype == "BLOOD" then
 		if data.food.prefab == "humanblood" and KendovMoonHealing and TheWorld.state.phase == "night" and not TheWorld:HasTag("cave") then
-			inst.components.health:DeltaPenalty(-KENTUNING.KENDOV_HUMANBLOOD_BOOST*(KENTUNING.KENDOV_HEALTH/100)*(1+KENTUNING.KENDOV_HUNGER_FULLMOON_ADDBLOODHEAL)*0.01)
+			inst.components.health:DeltaPenalty(-KENTUNING.KENDOV_HUMANBLOOD_BOOST*(TUNING.KENDOV_HEALTH/100)*(1+KENTUNING.KENDOV_HUNGER_FULLMOON_ADDBLOODHEAL)*0.01)
 			inst.components.health:DoDelta(KENTUNING.KENDOV_HUMANBLOOD_BOOST*(1+KENTUNING.KENDOV_HUNGER_FULLMOON_ADDBLOODHEAL))
 		elseif data.food.prefab == "humanblood" then
-			inst.components.health:DeltaPenalty(-KENTUNING.KENDOV_HUMANBLOOD_BOOST*(KENTUNING.KENDOV_HEALTH/100)*0.01)
+			inst.components.health:DeltaPenalty(-KENTUNING.KENDOV_HUMANBLOOD_BOOST*(TUNING.KENDOV_HEALTH/100)*0.01)
 			inst.components.health:DoDelta(KENTUNING.KENDOV_HUMANBLOOD_BOOST)
 		end
 		if KendovMoonHealing and TheWorld.state.phase == "night" and not TheWorld:HasTag("cave") then

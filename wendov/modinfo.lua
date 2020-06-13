@@ -1,7 +1,7 @@
 name = "Wendov"
 description = "Wendov, The Night Owl\n\n100 Health\t150 Hunger\t100 Sanity\n\nStronger during dusk, night, and when in caves.\nWeaker during the day.\nHeals from attacking based on damage done.\nCan't use normal healing items.\nCan craft items 1 tier above normal if sanity is above 50%.\nHas nightvision if sanity is at 50% or below.\nCan craft and consume blood for benefits and penalties."
 author = "Zenni & Ghost"
-version = "1.37"
+version = "1.38"
 
 forumthread = ""
 
